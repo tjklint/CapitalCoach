@@ -1,7 +1,7 @@
 #centerBox {
     max-width: 600px;
     margin: auto;
-    padding: 20px;
+    padding: 35px;
 }
 
 .grid-container {
@@ -29,4 +29,11 @@ button {
     padding: 10px;
     margin-top: 20px; /* Adjust as needed */
     /* Additional styling for the button */
+}
+
+#InvestSmartLogo {
+    height: 200px; /* Set the height to 150px */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Makes the image a block element, enabling margin auto */
+    margin: 0 auto; /* Centers the image horizontally within its div */
 }
