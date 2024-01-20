@@ -4,26 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
+    <script src="./src/script.js" defer></script>
+    <link rel="stylesheet" href="./src/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Poppins&display=swap" rel="stylesheet">
+</head>
     <script src="investment.js"></script>
 </head>
 <body>
-    <h2>Investment Calculator</h2>
+    <template id="pageHeaders">
+        <header id="header">
+            <p>Name</p>
+            <nav>
+                <ul>
+                    <li><a href="./investment.html">Invest</a></li>
+                    <li><a href="./budget.htmk">Budget</a></li>
+                    <li><a href="./chat.html">Chat</a></li>
+                </ul>
+            </nav>
+        </header>
+    </template>
 
-    <label for="initialInvestment">Initial Investment ($):</label><br>
-    <input type="number" id="initialInvestment" value="0"><br><br>
+    <div id="centerBox">
+        <h2>Investment Calculator</h2>
 
-    <label for="monthlyInvestment">Monthly Investment ($):</label><br>
-    <input type="number" id="monthlyInvestment" value="0"><br><br>
+        <label for="initialInvestment">Initial Investment ($):</label><br>
+        <input type="number" id="initialInvestment" value="0"><br><br>
 
-    <label for="years">Years of Investment:</label><br>
-    <input type="number" id="years" value="0"><br><br>
+        <label for="monthlyInvestment">Monthly Investment ($):</label><br>
+        <input type="number" id="monthlyInvestment" value="0"><br><br>
 
-    <label for="interestRate">Annual Interest Rate (%):</label><br>
-    <input type="number" id="interestRate" value="0" step="0.01"><br><br>
+        <label for="years">Years of Investment:</label><br>
+        <input type="number" id="years" value="0"><br><br>
 
-    <button onclick="calculateInvestment()">Calculate</button>
+        <label for="interestRate">Annual Interest Rate (%):</label><br>
+        <input type="number" id="interestRate" value="0" step="0.01"><br><br>
 
-    <p id="result"></p>
+        <button onclick="calculateInvestment()">Calculate</button>
+
+        <p id="result"></p>
+    </div>
+    
+
+    <template id="pageFooters">
+        <footer id="footer">
+            <p>Name</p>
+            <nav>
+                <ul>
+                    <li><a href="./investment.html">Invest</a></li>
+                    <li><a href="./budget.htmk">Budget</a></li>
+                    <li><a href="./chat.html">Chat</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </template>
 </body>
 </html>
