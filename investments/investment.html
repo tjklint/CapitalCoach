@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="./src/script.js" defer></script>
-    <link rel="stylesheet" href="./src/style.css">
+
+    <script src="../src/script.js" defer></script>
+
+    <link rel="stylesheet" href="./investment.css">
+    <link rel="stylesheet" href="../src/style.css">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Poppins&display=swap" rel="stylesheet">
 </head>
@@ -14,10 +17,10 @@
 <body>
     <template id="pageHeaders">
         <header id="header">
-            <p>Name</p>
+            <img src="../assets/SilverLogo.png" alt="Silver Capital Coach Logo">
             <nav>
                 <ul>
-                    <li><a href="./investment.html">Invest</a></li>
+                    <li><a href="./investment.html">InvestSmart</a></li>
                     <li><a href="./budget.htmk">Budget</a></li>
                     <li><a href="./chat.html">Chat</a></li>
                 </ul>
@@ -26,22 +29,43 @@
     </template>
 
     <div id="centerBox">
-        <h2>Investment Calculator</h2>
-
-        <label for="initialInvestment">Initial Investment ($):</label><br>
-        <input type="number" id="initialInvestment" value="0"><br><br>
-
-        <label for="monthlyInvestment">Monthly Investment ($):</label><br>
-        <input type="number" id="monthlyInvestment" value="0"><br><br>
-
-        <label for="years">Years of Investment:</label><br>
-        <input type="number" id="years" value="0"><br><br>
-
-        <label for="interestRate">Annual Interest Rate (%):</label><br>
-        <input type="number" id="interestRate" value="0" step="0.01"><br><br>
-
+        <img id="InvestSmartLogo" src="../assets/InvestSmartBlack.png" alt="Smart Invest Logo">
+    
+        <div class="grid-container">
+            <div class="investment-item">
+                <img src="../assets/initialinvestment.svg" alt="Initial Investment">
+                <div>
+                    <label for="initialInvestment">Initial Investment ($):</label><br>
+                    <input type="number" id="initialInvestment" value="0"><br>
+                </div>
+            </div>
+    
+            <div class="investment-item">
+                <img src="../assets/monthlyinvestment.svg" alt="Monthly Investment">
+                <div>
+                    <label for="monthlyInvestment">Monthly Investment ($):</label><br>
+                    <input type="number" id="monthlyInvestment" value="0"><br>
+                </div>
+            </div> 
+    
+            <div class="investment-item">
+                <img src="../assets/yearsofinvestment.svg" alt="Years of Investment">
+                <div>
+                    <label for="years">Years of Investment:</label><br>
+                    <input type="number" id="years" value="0"><br>
+                </div>
+            </div>
+    
+            <div class="investment-item">
+                <img src="../assets/interest.svg" alt="Annual Interest Rate">
+                <div>
+                    <label for="interestRate">Annual Interest Rate (%):</label><br>
+                    <input type="number" id="interestRate" value="0" step="0.01"><br>
+                </div>
+            </div>
+        </div>
+    
         <button onclick="calculateInvestment()">Calculate</button>
-
         <p id="result"></p>
     </div>
     
