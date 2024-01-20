@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgeting Calculator</title>
+
+    <link rel="stylesheet" href="./budget.css">
+    <script defer src="./budget.js"></script>
+</head>
+<body>
+    
+    <h1>Budget Pal</h1>
+    
+    <div class="prompt" id="prompt1">
+        <label for="salary_input">Monthly Salary: </label>
+        <input type="number" id="salary_input" placeholder="Enter your monthly salary">
+        <button onclick="nextPrompt('prompt1', 'prompt2')">Next</button>
+    </div>
+
+    <!-- Additional Questions -->
+    <br>
+
+    <div class="prompt" id="prompt2" style="display: none;">
+        <label for="dependents_input">Number of Dependents: </label>
+        <input type="number" id="dependents_input" placeholder="Enter the number of dependents">
+        <button onclick="nextPrompt('prompt2', 'prompt3')">Next</button>
+    </div>
+
+    <div class="prompt" id="prompt3" style="display: none;">
+        <br>
+        <label for="housing_input">Monthly Housing Cost: </label>
+        <input type="number" id="housing_input" placeholder="Enter your monthly rent or mortgage">
+        <button onclick="nextPrompt('prompt3', 'prompt4')">Next</button>
+    </div>
+
+    <div class="prompt" id="prompt4" style="display: none;">
+        <br>
+        <label for="utilities_input">Monthly Utilities Cost: </label>
+        <input type="number" id="utilities_input" placeholder="Enter your monthly utilities cost">
+        <button onclick="nextPrompt('prompt4', 'prompt5')">Next</button>
+    </div>
+
+    <div class="prompt" id="prompt5" style="display: none;">
+        <br>
+        <label for="transportation_input">Monthly Transportation Cost: </label>
+        <input type="number" id="transportation_input" placeholder="Enter your monthly transportation cost">
+        <button onclick="nextPrompt('prompt5', 'prompt6')">Next</button>
+    </div>
+
+    <div class="prompt" id="prompt6" style="display: none;">
+        <br>
+        <label for="hobby_expenses_input">Monthly Hobby Expenses: </label>
+        <input type="number" id="hobby_expenses_input" placeholder="Enter your monthly hobby expenses">
+        <br>
+        <button onclick="submitForm()">Submit</button>
+    </div>
+
+
+
+</body>
+</html>

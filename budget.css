@@ -1,0 +1,39 @@
+#prompt {
+    margin: 100px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    /* background-image: url('../images/bixi-wallpaper-dark.png');  */
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    /* background-color: rgba(27, 27, 27, 0.985) */
+    
+}
+
+
+.prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
+    border: 1px solid rgb(205, 202, 202);
+    padding: 20px;
+    margin: 10% 0 30px 0;
+    border-radius: 10px;
+    width: 400px;
+    height: fit-content;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Add transition property for opacity */
+    visibility: visible;
+}
+
+.hide {
+    opacity: 0; /* Set opacity to 0 for hiding */
+    visibility: hidden; /* Set visibility to hidden */
+}
