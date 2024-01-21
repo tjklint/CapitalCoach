@@ -9,10 +9,12 @@
 
     <link rel="stylesheet" href="./investment.css">
     <link rel="stylesheet" href="../src/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Poppins&display=swap" rel="stylesheet">
 </head>
-    <script src="investment.js"></script>
+    <script defer src="investment.js"></script>
 </head>
 <body>
     <template id="pageHeaders">
@@ -20,9 +22,9 @@
             <img src="../assets/SilverLogo.png" alt="Silver Capital Coach Logo">
             <nav>
                 <ul>
-                    <li><a href="./investment.html">InvestSmart</a></li>
-                    <li><a href="./budget.htmk">Budget</a></li>
-                    <li><a href="./chat.html">Chat</a></li>
+                    <li><a href="../investments/investment.html">InvestSmart</a></li>
+                    <li><a href="../budget/budget.html">BudgetBoss</a></li>
+                    <li><a href="../about/about-us.html">About Us</a></li>
                 </ul>
             </nav>
         </header>
@@ -65,19 +67,20 @@
             </div>
         </div>
     
-        <button onclick="calculateInvestment()">Calculate</button>
+        <button onclick="updateChart()">Calculate</button>
         <p id="result"></p>
+
+        <canvas id="myChart" width="400" height="400"></canvas>
+
     </div>
     
 
     <template id="pageFooters">
         <footer id="footer">
-            <p>Name</p>
+            <img src="../assets/SilverLogo.png" alt="Silver Capital Coach Logo">
             <nav>
                 <ul>
-                    <li><a href="./investment.html">Invest</a></li>
-                    <li><a href="./budget.htmk">Budget</a></li>
-                    <li><a href="./chat.html">Chat</a></li>
+                    <li><a href="../privacy/privacy-policy.html">Privacy Policy</a></li>
                 </ul>
             </nav>
         </footer>
