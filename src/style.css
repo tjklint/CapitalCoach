@@ -61,6 +61,8 @@ nav a:hover {
     width: 60%;
     margin-top:5%;
     margin-bottom:5%;
+    margin-left: 1%;
+    margin-right: 1%;
   }
 
 img {
