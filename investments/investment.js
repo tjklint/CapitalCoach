@@ -25,10 +25,10 @@
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: [],
+            labels: [], // This will be populated by the updateChart function
             datasets: [{
                 label: 'Investment Over Time',
-                data: [],
+                data: [], // This will be populated by the updateChart function
                 backgroundColor: 'rgba(0, 123, 255, 0.2)',
                 borderColor: 'rgba(0, 123, 255, 1)',
                 borderWidth: 1
@@ -37,7 +37,13 @@
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    ticks: {
+                        // Include a dollar sign in the ticks and format to two decimal places
+                        callback: function(value, index, values) {
+                            return '$' + value.toFixed(2);
+                        }
+                    }
                 }
             }
         }
@@ -45,8 +51,24 @@
 
     // Function to update chart
     function updateChart() {
+        var initialInvestment = parseFloat(document.getElementById('initialInvestment').value);
+        var years = parseInt(document.getElementById('years').value);
         var investmentData = calculateInvestment();
-        myChart.data.labels = Array.from({length: investmentData.length}, (_, i) => i + 1);
-        myChart.data.datasets[0].data = investmentData;
+        
+        // Generate labels for each year
+        var labels = [];
+        for (var i = 1; i <= years; i++) {
+            labels.push('Year ' + i);
+        }
+    
+        myChart.data.labels = labels;
+        
+        // Since we have labels for years, we want to only display the value at the end of each year
+        var yearlyData = [];
+        for (var i = 11; i < investmentData.length; i += 12) {
+            yearlyData.push(investmentData[i]);
+        }
+    
+        myChart.data.datasets[0].data = yearlyData;
         myChart.update();
     }
