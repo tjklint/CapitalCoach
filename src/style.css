@@ -5,7 +5,8 @@ body {
     flex-direction: column;
     min-height: 100vh; 
     align-items: center; 
-    justify-content: center;
+    justify-content: space-between;
+    margin:0;
 }
 
 #header{
@@ -17,7 +18,7 @@ body {
     padding-top: 5px;
     padding-bottom: 5px;
     margin: 0;
-    width: 100%;
+    width: 100vw;
     font-family: 'League Spartan', sans-serif;
     font-size: 26px;
 }
@@ -30,17 +31,9 @@ body {
     justify-content: space-around;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-top: auto;
     font-family: 'League Spartan', sans-serif;
-    width: 100%;
+    width: 100vw;
     font-size: 26px;
-}
-
-body{
-    margin:0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 nav ul {
