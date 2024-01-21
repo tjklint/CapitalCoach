@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budgeting Investments</title>
-    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="../src/style.css">
     <link rel="stylesheet" href="./budget.css">
-    <script src="./src/script.js" defer></script>
+    <script src="../src/script.js" defer></script>
     <script src="./budget.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Poppins&display=swap"
@@ -17,12 +17,12 @@
 <body>
     <template id="pageHeaders">
         <header id="header">
-            <p>Name</p>
+            <img src="../assets/SilverLogo.png" alt="Silver Capital Coach Logo">
             <nav>
                 <ul>
-                    <li><a href="./investment.html">Invest</a></li>
-                    <li><a href="./budget.htmk">Budget</a></li>
-                    <li><a href="./chat.html">Chat</a></li>
+                    <li><a href="../investments/investment.html">InvestSmart</a></li>
+                    <li><a href="../budget/budget.html">BudgetBoss</a></li>
+                    <li><a href="../about/about-us.html">About Us</a></li>
                 </ul>
             </nav>
         </header>
@@ -31,73 +31,105 @@
     <!-- <div id="centerBox"> -->
         <!-- <h1>Budget Pal</h1> -->
 
+
+        <div class="initial-box" id="initialBox">
+            <img src="../assets/BudgetBoss.png" alt="Silver Capital Coach Logo">
+            <p>Welcome to BudgetBoss! Start your ideal budget plan now.</p>
+            <button onclick="startBudgetPlan()">Start</button>
+          </div>
+
+        <div id="prompt">
+
+            <div  id="prompts1">
+                <label for="salary_input">Monthly Salary ($): </label>
+                <br>
+                <div class="error-message" id="error_prompt1"></div>
+                <input type="number" id="salary_input" placeholder="Ex: $5500" required>
+                <br>
+                <button onclick="nextPrompt('prompts1', 'prompts2')">Next</button>
+            </div>
         
+            <div  id="prompts2" style="display: none;">
+                <label for="needs_input">Monthly Needs ($): </label>
+                <br>
+                <div class="error-message" id="error_prompt2"></div>
+                <input type="number" id="needs_input" placeholder="Ex: Groceries, Rent, etc." required>
+                <br>
+                <button onclick="nextPrompt('prompts2', 'prompts3')">Next</button>
+            </div>
+        
+            <div id="prompts3" style="display: none;">
+                <label for="wants_input">Monthly Wants ($): </label>
+                <br>
+                <div class="error-message" id="error_prompt3"></div>
+                <input type="number" id="wants_input" placeholder="Ex: Entertainment, Dining, etc." required>
+                <br>
+                <button onclick="nextPrompt('prompts3', 'prompts4')">Next</button>
+            </div>
+        
+            <div id="prompts4" style="display: none;">
+                <label for="savings_input">Monthly Savings ($): </label>
+                <br>
+                <div class="error-message" id="error_prompt4"></div>
+                <input type="number" id="savings_input" placeholder="Ex: Investments, Emergency Fund, etc." required>
+                <br>
+                <button onclick="nextPrompt('prompts4', 'prompts5')">Next</button>
+            </div>
+        
+            <div id="prompts5" style="display: none;">
+                <label for="budget_rule_select">Select Budgeting Rule (%):</label>
+                <br>
+                <select id="budget_rule_select">
+                    <option value="50/30/20">50/30/20 Rule</option>
+                    <option value="40/30/30">40/30/30 Rule</option>
+                    <option value="60/20/20">60/20/20 Rule</option>
+                    <option value="70/20/10">70/20/10 Rule</option>
+                </select>
+                <br>
+                <button onclick="submitForm()">Submit</button>
+            </div>
 
-        <div class="prompt" id="prompt1">
-            <label for="salary_input">Monthly Salary ($): </label>
-            <br>
-            <div class="error-message" id="error_prompt1"></div>
-            <input type="number" id="salary_input" placeholder="Ex: $5500" required>
-            <br>
-            <button onclick="nextPrompt('prompt1', 'prompt2')">Next</button>
+
         </div>
-    
-        <div class="prompt" id="prompt2" style="display: none;">
-            <label for="needs_input">Monthly Needs ($): </label>
-            <br>
-            <div class="error-message" id="error_prompt2"></div>
-            <input type="number" id="needs_input" placeholder="Ex: Groceries, Rent, etc." required>
-            <br>
-            <button onclick="nextPrompt('prompt2', 'prompt3')">Next</button>
-        </div>
-    
-        <div class="prompt" id="prompt3" style="display: none;">
-            <label for="wants_input">Monthly Wants ($): </label>
-            <br>
-            <div class="error-message" id="error_prompt3"></div>
-            <input type="number" id="wants_input" placeholder="Ex: Entertainment, Dining, etc." required>
-            <br>
-            <button onclick="nextPrompt('prompt3', 'prompt4')">Next</button>
-        </div>
-    
-        <div class="prompt" id="prompt4" style="display: none;">
-            <label for="savings_input">Monthly Savings ($): </label>
-            <br>
-            <div class="error-message" id="error_prompt4"></div>
-            <input type="number" id="savings_input" placeholder="Ex: Investments, Emergency Fund, etc." required>
-            <br>
-            <button onclick="nextPrompt('prompt4', 'prompt5')">Next</button>
-        </div>
-    
-        <div class="prompt" id="prompt5" style="display: none;">
-            <label for="budget_rule_select">Select Budgeting Rule (%):</label>
-            <br>
-            <select id="budget_rule_select">
-                <option value="50/30/20">50/30/20 Rule</option>
-                <option value="40/30/30">40/30/30 Rule</option>
-                <option value="60/20/20">60/20/20 Rule</option>
-                <option value="70/20/10">70/20/10 Rule</option>
-            </select>
-            <br>
-            <button onclick="submitForm()">Submit</button>
-        </div>
+          
     
 
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+          </div>
 
     <!-- </div> -->
-
     <template id="pageFooters">
-        <footer id="footer" style="margin-top: 0%;">
-            <p>Name</p>
+        <footer id="footer">
+            <img src="../assets/SilverLogo.png" alt="Silver Capital Coach Logo">
             <nav>
                 <ul>
-                    <li><a href="./investment.html">Invest</a></li>
-                    <li><a href="./budget.htmk">Budget</a></li>
-                    <li><a href="./chat.html">Chat</a></li>
+                    <li><a href="../privacy/privacy-policy.html">Privacy Policy</a></li>
                 </ul>
             </nav>
         </footer>
     </template>
-</body>
 
+    <!--ChatBot-->
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script>
+    window.botpressWebChat.init({
+        "composerPlaceholder": "Learn about finances!",
+        "botConversationDescription": "Made w/ love by hiJACkers team <3",
+        "botId": "82f0e1e8-82d7-46cf-b2a7-bcc7d1ececa7",
+        "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+        "messagingUrl": "https://messaging.botpress.cloud/",
+        "clientId": "82f0e1e8-82d7-46cf-b2a7-bcc7d1ececa7",
+        "webhookId": "d830dfc2-e814-4960-9b92-503a28692905",
+        "lazySocket": true,
+        "themeName": "prism",
+        "frontendVersion": "v1",
+        "showPoweredBy": true,
+        "theme": "prism",
+        "themeColor": "#2563eb",
+        "botName": "CapitalCoach",
+        "div.bpw-bubble-content": "#2563eb"
+    });
+    </script>
+</body>
 </html>
