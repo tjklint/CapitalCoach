@@ -1,6 +1,6 @@
 # Capital Coach
 
-Welcome to Capital Coach, our innovative financial tool crafted with dedication at ConUHacks VIII. This project is a collaborative effort of our team comprising of Timothy (TJ) Klint, Zachary Dube, Lucas Lalumiere, and Dylan Savelson. Capital Coach is designed to empower individuals with smart financial planning tools, integrating simplicity with effectiveness.
+Welcome to **Capital Coach**, our innovative financial tool crafted with dedication at ConUHacks VIII. This project is a collaborative effort of our team comprising of Timothy (TJ) Klint, Zachary Dube, Lucas Lalumiere, and Dylan Savelson. Capital Coach is designed to empower individuals with smart financial planning tools, integrating simplicity with effectiveness.
 
 ## Features
 
