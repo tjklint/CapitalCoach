@@ -66,7 +66,10 @@ nav a:hover {
     background-color: white;
     border: 5px solid;
     width: 60%;
-    padding-top:3%;
     margin-top:5%;
-    height: 200px;
+    margin-bottom:5%;
   }
+
+img {
+    height:100px;
+}

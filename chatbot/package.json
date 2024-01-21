@@ -1,0 +1,17 @@
+{
+  "name": "conuhacksviii",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "chatbot.js",
+  "scripts": {
+    "dev": "node chatbot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.2",
+    "openai": "^4.24.7"
+  }
+}
