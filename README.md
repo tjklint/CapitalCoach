@@ -18,12 +18,6 @@ Powered by Botpress, the CapitalCoach Chatbot is your go-to source for any queri
 ## Getting Started
 (Provide instructions here on how to install, set up, and use Capital Coach.)
 
-## Contributing
-(Provide guidelines for how others can contribute to the project.)
-
-## License
-(Include details about the project's licensing here.)
-
 ## Our Team + Contact:
 For any further inquiries or suggestions, feel free to reach out to our team members:
 - [Timothy Klint](https://github.com/tjklint) - timothyjklint@gmail.com
