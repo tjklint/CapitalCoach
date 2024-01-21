@@ -10,6 +10,27 @@ let needsInput = document.getElementById('needs_input');
 let wantsInput = document.getElementById('wants_input');
 let savingsInput = document.getElementById('savings_input');
 let ruleSelect = document.getElementById('budget_rule_select');
+const progressBar = document.getElementById('progress-bar');
+const progressBarContainer = document.getElementById('progress-bar-container');
+
+let initialBox = document.getElementById('initialBox');
+let promptDiv = document.getElementById('prompt');
+let prompt1 = document.getElementById('prompts1');
+
+//Upon running...
+initialBox.style.display = ''
+promptDiv.style.display = 'none';
+prompts1.style.display = 'none';
+progressBarContainer.style.display = 'none';
+
+
+let currentPromptIndex = 0;
+const totalPrompts = 5;
+
+function updateProgressBar() {
+    const progressPercentage = (currentPromptIndex / totalPrompts) * 100;
+    progressBar.style.width = `${progressPercentage}%`;
+}
 
 function submitForm() {
     // Get user input
@@ -23,6 +44,10 @@ function submitForm() {
 
     // Display the results in a new prompt
     displayResults();
+
+    // Increment the current prompt index and update the progress bar
+    currentPromptIndex++;
+    updateProgressBar();
 }
 
 function displayResults() {
@@ -42,57 +67,70 @@ function displayResults() {
     const wantsDifference = wants - recommendedWants;
     const savingsDifference = savings - recommendedSavings;
 
-    let prompt = document.getElementById('prompt5');
+    let prompt = document.getElementById('prompts5');
 
     prompt.innerHTML = '';
-
-
 
     // Reference to the result prompt
     const resultPrompt = document.getElementById('resultPrompt');
 
-    // Create a div to hold the content
-    const contentDiv = document.createElement('div');
-    contentDiv.style.marginTop = '20px';
+    // Helper function to determine the color based on the difference
+    function getColorClass(difference) {
+        const percentageDifference = (Math.abs(difference) / recommendedNeeds) * 100;
+
+        if (percentageDifference <= 10) {
+            return 'green';
+        } else if (percentageDifference <= 30) {
+            return 'orange';
+        } else {
+            return 'red';
+        }
+    }
 
     // Add content to the div
     prompt.innerHTML = `
-        <p><strong>Budgeting Results:</strong></p>
+        <h1><strong>Budgeting Results:</strong></h1>
         <p><strong>Salary:</strong> $${salary.toFixed(2)}</p>
         <hr>
-        <p><strong>Actual Spending:</strong></p>
+        <label><strong>Actual Spending:</strong></label>
         <p>Needs: $${needs.toFixed(2)}</p>
         <p>Wants: $${wants.toFixed(2)}</p>
         <p>Savings: $${savings.toFixed(2)}</p>
 
         <hr>
-        <p><strong>Recommended Spending (${selectedRule} Rule):</strong></p>
+        <label><strong>Recommended Spending <br> (${selectedRule} Rule):</strong></label>
         <p>Needs: $${recommendedNeeds.toFixed(2)}</p>
         <p>Wants: $${recommendedWants.toFixed(2)}</p>
         <p>Savings: $${recommendedSavings.toFixed(2)}</p>
 
         <hr>
-        <p><strong>Difference:</strong></p>
-        <p>Needs: $${needsDifference.toFixed(2)}</p>
-        <p>Wants: $${wantsDifference.toFixed(2)}</p>
-        <p>Savings: $${savingsDifference.toFixed(2)}</p>
+        <label><strong>Difference:</strong></label>
+        <div style='display:flex;flex-direction:row;'> 
+        <p style='color:green;' >⬤</p><p> = Good |</p>
+        <p style='color:orange;'> ⬤</p><p> = Okay |</p>
+        <p style='color:red;'> ⬤</p><p> = Bad</p>
+        </div>
+        <p>Needs: <span class="${getColorClass(needsDifference)}">${needsDifference >= 0 ? '+' : ''}${needsDifference.toFixed(2)}</span></p>
+        <p>Wants: <span class="${getColorClass(wantsDifference)}">${wantsDifference >= 0 ? '+' : ''}${wantsDifference.toFixed(2)}</span></p>
+        <p>Savings: <span class="${getColorClass(savingsDifference)}">${savingsDifference >= 0 ? '+' : ''}${savingsDifference.toFixed(2)}</span></p>
     `;
 
     prompt.style.height = 'fit-content';
-    prompt.style. margin = '40px 0px 40px 0px'
-    // // Append the new content div to the result prompt
-    // resultPrompt.appendChild(contentDiv);
+    prompt.style.margin = '40px 0px 40px 0px'
+}
 
-    // // Show the result prompt
-    // fadeIn(resultPrompt);
+function fadeIn(element) {
+    element.style.display = 'flex'; // Ensure the element is displayed
+    element.style.opacity = 1;
 }
 
 function fadeOut(element) {
     element.style.opacity = 0;
-}
 
-function fadeIn(element) {
-    element.style.opacity = 1;
+    // Set a timeout to hide the element after the transition is complete
+    setTimeout(() => {
+        element.style.display = 'none';
+    }, 500); // 500ms matches the transition duration
 }
 
 function nextPrompt(current, next) {
@@ -106,7 +144,7 @@ function nextPrompt(current, next) {
 
     // Check if the input is empty
     if (inputValue === '') {
-        errorMessageElement.textContent = 'Please fill in the input field before proceeding.';
+        errorMessageElement.textContent = 'ERROR: Please fill in the input field before proceeding.';
         errorMessageElement.style.color = 'red';
         return;
     }
@@ -114,10 +152,30 @@ function nextPrompt(current, next) {
     // Reset error message when transitioning to the next prompt
     errorMessageElement.textContent = '';
 
+    // Fade out the current prompt
     fadeOut(currentPromptElement);
+
     setTimeout(() => {
-        currentPromptElement.style.display = "none";
-        nextPromptElement.style.display = "flex";
+        // Hide the current prompt
+        currentPromptElement.style.display = 'none';
+
+        // Display the next prompt
         fadeIn(nextPromptElement);
+        nextPromptElement.style.display = 'flex';
+
+        // Increment the current prompt index and update the progress bar
+        currentPromptIndex++;
+        updateProgressBar();
     }, 500); // 500ms delay to match the transition duration
+}
+
+
+function startBudgetPlan() {
+    promptDiv.style.display = 'flex';
+    prompts1.style.display = 'flex';
+    progressBarContainer.style.display = 'block';
+    initialBox.style.display = 'none'
+
+
+
 }

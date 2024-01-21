@@ -4,7 +4,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.prompt {
+#prompt {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,14 +22,15 @@ body {
     background-color: white;
     border: 5px solid;
     width: 40%;
-    height: 300px;
-    margin-top: auto;
-    margin-bottom: auto;
+    height: fit-content;
+    margin-top: 8vh;
+    margin-bottom: 8vh;
 }
 
 .hide {
     opacity: 0;
-    visibility: hidden;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
 }
 
 input, select {
@@ -37,8 +38,13 @@ input, select {
     font-size: 20px;
     border: 1.5px solid #d8d4d4;
     border-radius: 20px;
-    width: 40%;
-    margin: 5px
+    width: 50%;
+    margin: 5px;
+    padding: 10px;
+}
+
+label{
+    font-size: 20px;
 }
 
 button {
@@ -70,4 +76,85 @@ hr {
     border-top: 1px;
     border-color: #31473A;
     width: 100%
+}
+
+#progress-bar-container {
+    width: 40%;
+    background-color: #ccc;
+    height: 20px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+  }
+  
+  #progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #d7dfd8;
+    transition: width 0.3s ease-in-out;
+    border-radius: 30px;
+    box-shadow: 4px 0px 20px 0 #4caf50;
+  }
+
+  .initial-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
+    border: 1px solid rgb(205, 202, 202);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    height: fit-content;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    visibility: visible;
+    background-color: white;
+    border: 5px solid;
+    width: 40%;
+    height: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  img {
+    height:120px;
+    /* width: 300px; */
+}
+
+div[id^="prompts"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 400px;
+    height: fit-content;
+
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Add transition property for opacity */
+    visibility: visible;
+    
+  }
+
+
+  .hide {
+    opacity: 0;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+.green {
+    color: green;
+}
+
+.orange {
+    color: orange;
+}
+
+.red {
+    color: red;
 }
