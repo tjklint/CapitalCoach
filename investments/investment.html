@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="./investment.css">
     <link rel="stylesheet" href="../src/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Poppins&display=swap" rel="stylesheet">
 </head>
@@ -65,8 +67,11 @@
             </div>
         </div>
     
-        <button onclick="calculateInvestment()">Calculate</button>
+        <button onclick="updateChart()">Calculate</button>
         <p id="result"></p>
+
+        <canvas id="myChart" width="400" height="400"></canvas>
+
     </div>
     
 
