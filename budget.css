@@ -1,19 +1,8 @@
-#prompt {
-    margin: 100px;
-}
-
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: 0;
-    /* background-image: url('../images/bixi-wallpaper-dark.png');  */
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    /* background-color: rgba(27, 27, 27, 0.985) */
-    
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
 
 .prompt {
     display: flex;
@@ -23,17 +12,62 @@ body {
     box-shadow: 0 8px 16px 0 rgb(0, 0, 0);
     border: 1px solid rgb(205, 202, 202);
     padding: 20px;
-    margin: 10% 0 30px 0;
     border-radius: 10px;
     width: 400px;
     height: fit-content;
     overflow: hidden;
     opacity: 1;
-    transition: opacity 0.5s ease-in-out; /* Add transition property for opacity */
+    transition: opacity 0.5s ease-in-out;
     visibility: visible;
+    background-color: white;
+    border: 5px solid;
+    width: 40%;
+    height: 300px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .hide {
-    opacity: 0; /* Set opacity to 0 for hiding */
-    visibility: hidden; /* Set visibility to hidden */
+    opacity: 0;
+    visibility: hidden;
+}
+
+input, select {
+    height: 50px;
+    font-size: 20px;
+    border: 1.5px solid #d8d4d4;
+    border-radius: 20px;
+    width: 40%;
+    margin: 5px
+}
+
+button {
+    height: 50px;
+    border: solid;
+    width: 30%;
+    border-color: #31473A;
+    border-radius: 20px;
+    background-color: #738363;
+    color: #ffffff;
+    transition: background-color 0.5s, color 0.5s;
+    background-color: .1 ease-in-out;
+    padding: 10px;
+}
+
+button:hover {
+    border: 10;
+    background-color: #31473A;
+    border-color: #738363;
+    color: #738363;
+}
+
+#resultPrompt {
+    width: 100%;
+}
+
+
+hr {
+    border-top: 1px;
+    border-color: #31473A;
+    width: 100%
 }
