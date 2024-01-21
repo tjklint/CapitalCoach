@@ -24,11 +24,11 @@ Powered by Botpress, the CapitalCoach Chatbot is your go-to source for any queri
 ## License
 (Include details about the project's licensing here.)
 
-## Contact
+## Our Team + Contact:
 For any further inquiries or suggestions, feel free to reach out to our team members:
-- Timothy (TJ) Klint - [email/contact info]
-- Zachary Dube - [email/contact info]
-- Lucas Lalumiere - [email/contact info]
-- Dylan Savelson - [email/contact info]
+- [Timothy Klint](https://github.com/tjklint) - timothyjklint@gmail.com
+- [Dylan Savelson](https://github.com/DylanSavelson)
+- [Lucas Lalumiere](https://github.com/Shlucus) - lucas.lalum@gmail.com
+- [Zachary Dube](https://github.com/CompSciZach)
 
 Thank you for exploring Capital Coach, where we strive to simplify and enhance your financial journey!
