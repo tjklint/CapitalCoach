@@ -66,3 +66,8 @@ nav a:hover {
 img {
     height:100px;
 }
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}

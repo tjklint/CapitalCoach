@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>InvestSmart</title>
 
-    <script src="../src/script.js" defer></script>
 
     <link rel="stylesheet" href="./investment.css">
     <link rel="stylesheet" href="../src/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://www.w3schools.com/lib/w3data.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600&family=Poppins&display=swap" rel="stylesheet">
@@ -17,18 +17,7 @@
     <script defer src="investment.js"></script>
 </head>
 <body>
-    <template id="pageHeaders">
-        <header id="header">
-            <img src="../assets/SilverLogo.png" alt="Silver Capital Coach Logo">
-            <nav>
-                <ul>
-                    <li><a href="../investments/investment.html">InvestSmart</a></li>
-                    <li><a href="../budget/budget.html">BudgetBoss</a></li>
-                    <li><a href="../about/about-us.html">About Us</a></li>
-                </ul>
-            </nav>
-        </header>
-    </template>
+    <div w3-include-html="../header.html"></div>
 
     <div id="centerBox">
         <img id="InvestSmartLogo" src="../assets/InvestSmartBlack.png" alt="Smart Invest Logo">
@@ -75,16 +64,8 @@
     </div>
     
 
-    <template id="pageFooters">
-        <footer id="footer">
-            <img src="../assets/SilverLogo.png" alt="Silver Capital Coach Logo">
-            <nav>
-                <ul>
-                    <li><a href="../privacy/privacy-policy.html">Privacy Policy</a></li>
-                </ul>
-            </nav>
-        </footer>
-    </template>
+    <div w3-include-html="../footer.html"></div> 
+    <script>w3IncludeHTML();</script>
 
     <!--ChatBot-->
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
